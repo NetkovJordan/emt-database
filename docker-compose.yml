@@ -27,5 +27,5 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=EscanorSama
     volumes:
-      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+      - ./data/data.sql:/docker-entrypoint-initdb.d/data.sql
  

@@ -6,6 +6,7 @@ services:
       - 3000:3000
     depends_on:
       - backend
+
   backend:
     image: netkovjordan/my-springboot-app:latest
     ports:
@@ -16,6 +17,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=EscanorSama
     depends_on:
       - database
+
   database:
     image: netkovjordan/my-postgredb:latest
     ports:
@@ -25,4 +27,5 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=EscanorSama
     volumes:
-      - ./data.sql:/docker-entrypoint-initdb.d/data.sql
+      - ./data/data.sql:/docker-entrypoint-initdb.d/data.sql
+ 
